@@ -6,12 +6,12 @@ import LoadingSpinner from '../components/LoadingSpinner';
 const Disasters = () => {
     const [loading,setLoading] = useState(false);
   const data = useLoaderData();
-  const events = data.events;
+  const events = data?.events || [];
 //   console.log(events[0]);
   
-    const sorted = events.sort((a,b)=>{
+    const sorted = events.length > 0 ? events.sort((a,b)=>{
         return a.geometries[0].date - b.geometries[0].date;
-    })
+    }) : [];
     console.log(sorted)
 
   return (
