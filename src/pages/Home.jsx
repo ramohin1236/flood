@@ -13,7 +13,7 @@ const Home = () => {
     const data = useLoaderData();
     const events = data.events;
     const latest = []
-    events.forEach(event => {
+    events?.forEach(event => {
         latest.push(event.title);
     });
     
